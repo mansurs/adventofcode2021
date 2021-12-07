@@ -1,7 +1,7 @@
 <?php
 
-$fileContent = explode("\n", file_get_contents('example.txt'));
-//$fileContent = explode("\n", file_get_contents('input.txt'));
+//$fileContent = explode("\n", file_get_contents('example.txt'));
+$fileContent = explode("\n", file_get_contents('input.txt'));
 
 $crabs = explode(",", reset($fileContent));
 
