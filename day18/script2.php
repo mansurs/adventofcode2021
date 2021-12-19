@@ -32,7 +32,6 @@ function explodeSnailNumber(string $sn) {
                 );
                 $sn = $leftSn . '0' . $rightSn;
                 array_pop($openStack);
-                return $sn;
             }
         } elseif ($sn[$i] == ']') {
             array_pop($openStack);
@@ -52,15 +51,8 @@ function addition(array $arr1, array $arr2): array {
     $arr = [$arr1, $arr2];
     $oldStr = json_encode($arr);
     do {
-//        echo "OLD: " . $oldStr . "\n";
-        $newStr2 = $oldStr;
-        do {
-            $newStr1 = $newStr2;
-            $newStr2 = explodeSnailNumber($newStr1);
-        } while ($newStr1 != $newStr2);
-//        echo "EXP: " . $newStr2 . "\n";
+        $newStr1 = explodeSnailNumber($oldStr);
         $newStr2 = splitSnailNumber($newStr1);
-//        echo "SPL: " . $newStr2 . "\n";
         if ($newStr2 == $oldStr) {
             break;
         }
